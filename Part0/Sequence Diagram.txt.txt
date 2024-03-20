@@ -1,0 +1,21 @@
+---
+title : 0.6 New note in Single page app diagram
+---
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: xhttp.open("GET", "/exampleapp/data.json", true);
+    activate server
+    server-->>browser: data.json
+    deactivate server
+
+    Note right of browser: browser parse JSON data and adding Note Object to the Notes Array
+
+    browser->>server: new data is submitted by the user then the browser POST request new_notes.json
+    activate server
+    server-->>browser: new_notes.json
+    deactivate server
+
+    Note right of browser: show response in Notes Array
